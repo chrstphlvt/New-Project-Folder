@@ -40,7 +40,7 @@ usersRouter.get('/:id', [authMiddleware('admin', 'finance-manager', 'employee'),
  * updates user
  * USER, ADMIN
  */
-usersRouter.patch('', [authMiddleware('admin','finance-manager', 'employee'), async (req, res) => { // Promise call
+usersRouter.patch('', [authMiddleware('admin', 'finance-manager', 'employee'), async (req, res) => { // Promise call
     const result = req.body;
     const user = await userDao.updateUser(result);  // calling the update User function in userDao
     // checks to see if user, id, roleid(1 or 2) is the user with the role or id
